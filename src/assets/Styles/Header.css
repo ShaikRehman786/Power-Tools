@@ -4,56 +4,52 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
 
-/* HEADER */
+header {
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= HEADER ================= */
 .header {
   position: relative;
   height: 75vh;
-  overflow-x: hidden;
-  overflow-y: visible;   /* 🔥 THIS FIXES IT */
-}
-
-/* REMOVE UNDERLINE FROM BUTTON LINKS */
-.actions a {
-  text-decoration: none;
-}
-
-/* EXTRA SAFETY */
-.actions a:visited,
-.actions a:hover,
-.actions a:active {
-  text-decoration: none;
+  overflow: hidden;
 }
 
 
-/* NAVBAR */
+
+/* ================= NAVBAR ================= */
+
 .navbar {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
+
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  font-size: 16px;
+
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
 }
 
-/* BRAND NAME */
+
 .nav-brand {
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
 }
 
-/* NAV LINKS */
+/* NAV LINKS (DESKTOP) */
 .nav-links {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 14px;
 }
 
 .nav-links a {
@@ -63,30 +59,43 @@
   font-weight: 500;
 }
 
-/* VIDEO */
+/* ================= MENU BUTTON ================= */
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ================= VIDEO ================= */
+
 .bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
 }
 
-/* OVERLAY */
+/* ================= OVERLAY ================= */
+
 .overlay {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
+  padding: 40px 20px;
 }
 
-/* TEXT */
 .overlay h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -98,65 +107,83 @@
   max-width: 600px;
 }
 
-/* BUTTONS */
+/* ================= BUTTONS ================= */
+
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.actions a {
+  text-decoration: none;
+}
+
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
+
   padding: 12px 20px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
   background: #ffffff;
   color: #000;
   font-weight: 600;
-  text-decoration: none;
 }
 
 .btn-whatsapp {
   background: #25D366;
 }
 
-/* ACTIONS */
-.actions {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+/* ================= FOOT LINE ================= */
 
-/* FOOT LINE */
 .footer-line {
   margin-top: 20px;
   opacity: 0.9;
 }
 
+/* ================================================= */
+/* ================= MOBILE VIEW =================== */
+/* ================================================= */
 
 @media (max-width: 900px) {
 
-  .navbar {
-    position: static;     /* 🔥 THIS IS THE KEY */
+  .menu-btn {
     display: block;
-    padding: 10px 12px;
-    text-align: center;
-  }
-
-  .nav-brand {
-    margin-bottom: 8px;
   }
 
   .nav-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    width: 90%;
+    background: #111;
+    padding: 20px 0;
+    border-radius: 8px;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
   }
 
+  .nav-links.show {
+    display: flex;
+  }
 }
-/* MOBILE TEXT & SPACING FIX */
+
 @media (max-width: 600px) {
 
+  .header {
+    height: auto;
+  }
+
   .overlay {
-    padding-bottom: 100px;   /* THIS IS THE KEY */
+    min-height: 75vh;
+    padding: 40px 15px;
   }
 
   .overlay h1 {
@@ -169,21 +196,12 @@
     padding: 0 10px;
   }
 
-  .navbar {
-    padding: 10px 12px;
-  }
-
-  .nav-links {
-    gap: 8px;
-    font-size: 0.8rem;
-  }
-
   .actions {
     flex-direction: column;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
-    justify-content: center;
   }
 }

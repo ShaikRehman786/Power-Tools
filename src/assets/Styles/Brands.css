@@ -1,32 +1,32 @@
 .brands-section {
-  padding: 70px 20px;
+  padding: 60px 20px;
   background: #ffffff;
   text-align: center;
 }
 
 .brands-section h2 {
   font-size: 2.2rem;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .brands-sub {
   color: #555;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-/* BRANDS GRID */
+/* GRID */
 .brands-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
   max-width: 1000px;
   margin: auto;
 }
 
 .brands-grid img {
-  max-width: 140px;
+  max-width: 130px;
   height: auto;
   opacity: 0.85;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -40,14 +40,20 @@
 .brand-note {
   font-size: 0.8rem;
   color: #777;
-  margin-top: 25px;
+  margin-top: 20px;
 }
-
 
 /* MOBILE */
 @media (max-width: 600px) {
+  .brands-section {
+    padding: 40px 15px;
+  }
+
+  .brands-grid {
+    gap: 20px;
+  }
+
   .brands-grid img {
-    max-width: 110px;
+    max-width: 100px;
   }
 }
-

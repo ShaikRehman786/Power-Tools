@@ -1,21 +1,20 @@
 .footer {
   background: #111;
   color: #eee;
-  padding: 60px 20px 20px;
+  padding: 50px 20px 20px;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  gap: 30px;
 }
 
 .footer h3,
 .footer h4 {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: #fff;
 }
 
@@ -30,28 +29,23 @@
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-links a {
   color: #bbb;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #fff;
 }
 
 .footer-contact p {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #bbb;
 }
 
 /* BOTTOM */
 .footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
+  margin-top: 30px;
+  padding-top: 15px;
   border-top: 1px solid #333;
   text-align: center;
   color: #aaa;

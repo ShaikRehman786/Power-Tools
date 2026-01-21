@@ -75,6 +75,7 @@
 /* MAP */
 .contact-map {
   flex: 1;
+  height: 400px;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
@@ -86,14 +87,15 @@
   border: 0;
 }
 
+
 /* MOBILE */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
   }
 
-  .contact-map iframe {
-    height: 220px;
+  .contact-map{
+    height: 250px;
   }
 }
 
